@@ -1,0 +1,261 @@
+
+.mytrip-main-container {
+    
+    max-width: 100vmax;
+    max-height: 100vmax;
+    background-color: #eff2f7;
+ 
+  }
+
+  
+
+  
+  .flowbite-modal {
+    width: 400px;
+    height: 600px;
+    margin: auto;
+
+    
+   
+}
+
+
+
+.fowbite-body{
+  margin: 1rem 2rem;
+  padding: 2rem 1rem;
+  height: 100%;
+}
+
+.newUser{
+  margin: 0.8rem 0;
+}
+
+.createAccount-btn{
+  color: #25acaa;
+  font-size: 0.9rem;
+  margin: 0.4rem 0;
+}
+
+.label{
+  margin: 1rem 0;
+}
+
+.tag-label{
+  margin: 0.7rem 0;
+}
+
+.register-header{
+  font-size: 1.5rem;
+  margin: 0.4rem 0;
+}
+
+.already-text{
+  font-size: 0.8rem;
+}
+
+.second-model-ul{
+  margin: 0.8rem 0;
+
+}
+
+.second-label{
+  margin: 0.7rem 0;
+}
+
+  .mytrip-semi-main-container{
+    width: 100%;
+    max-width: 1140px; /* Adjusted max-width */
+    height: 660px;
+    margin: 1rem auto; /* Center the container horizontally */
+
+    
+  }
+  
+  .mytrip-container {
+    display: flex;
+    width: 940px;
+    height: 580px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 8px;
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+    background-color: white;
+   
+    
+   
+}
+
+.mytrip-left-container{
+ border-radius: 8px;
+}
+
+.mytrip-img{
+  height: 100%;
+ border-radius:  8px 0 0 8px;
+}
+.mytrip-right-container{
+
+    margin: 2rem 3.5rem;
+   
+}
+
+.mytrip-header{
+
+    margin: 1rem 0;
+    font-weight: 600;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.8rem;
+}
+
+.mytrip-para{
+  
+  color: #4c5b6d;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+/* ul{
+  
+} */
+
+.mytrip-li{
+  margin:0.5rem 0;
+  list-style:circle;
+  font-weight: 400;
+}
+  
+.my-trip-btn{
+
+  background-color: #25acaa;
+  width: 67%;
+  border-radius: 8px;
+  margin: 0.8rem 0;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+
+.custom-width-input {
+  width: 70%;
+  border-radius: 8px;
+  border: 1px solid #cccc;
+  outline: none;
+  box-shadow: none;
+  
+  
+}
+
+.mytrip-btn-link{
+  border: none;
+  outline: none;
+  margin: 2rem 0;
+}
+.custom-label{
+
+  margin-top: 0.5rem;
+}
+
+.custom-width-input:focus {
+  border-color: black;
+  width: 100%;
+}
+
+.mytrip-p{
+  color: #4c5b6d;
+}
+
+.mytrip-link{
+  text-decoration:underline;
+  color: #25acaa;
+
+}
+
+.my-trip-model-btn{
+  background-color: #25acaa;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 0.5rem 0;
+  width: 100%;
+}
+.model-paragraph{
+  font-size: 11px;
+  color: #4c5b6d;
+  line-height: 16px;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-top: 0.8rem;
+}
+
+.second-model-ul{
+  display: flex;
+  justify-content:space-between;
+  
+}
+.model-li{
+  margin: 0.4rem 1rem;
+  line-height: 12px;
+  font-size: 11px;
+  color: #4c5b6d;
+  list-style: circle;
+  text-decoration: none;
+
+}
+
+@media screen and (max-width: 660px) {
+  .flowbite-modal {
+      width: 100%;
+  }
+
+  .fowbite-body {
+      margin: 1rem;
+      padding: 1rem;
+  }
+
+  .mytrip-left-container {
+      display: none;
+  }
+
+  .mytrip-semi-main-container {
+      padding: 0.5rem;
+  }
+
+  .mytrip-container {
+      max-width: 90%;
+      align-items: center;
+      padding: 0 2rem;
+  }
+
+  .mytrip-right-container {
+      margin: 1rem 0;
+      align-items: center;
+  }
+
+  .custom-width-input {
+      width: 100%; 
+  }
+  .custom-width-input, .my-trip-btn {
+    width: 100%; 
+}
+}
+
+@media screen and (max-width: 500px) {
+  .flowbite-modal {
+      width: 95%;
+  }
+
+  .mytrip-left-container {
+      display: none;
+  }
+}

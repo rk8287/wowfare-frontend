@@ -31,7 +31,7 @@ const Header = () => {
         <div className={active}>
           <ul className="navLists flex">
             <li className="navItem">
-              <Link to={""} href="#" className="navLink">
+              <Link to={'/myTrip'} href="#" className="navLink">
                 My Trips
               </Link>
             </li>
