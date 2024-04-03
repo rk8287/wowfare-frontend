@@ -1,0 +1,290 @@
+.right-container-content {
+  padding: 1.8rem;
+}
+
+.contactUsHeading {
+  display: none;
+}
+
+.callUsNow {
+  border: 0.5px solid rgba(151, 149, 149, 0.489);
+  border-radius: 5px;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.callUsNowContent h3 {
+  font-size: 1.8rem;
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.callUsNowContent h4 {
+  font-size: 0.9rem;
+  color: #df4477;
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.callUsNow .phoneNumberBtn {
+  background: var(--btnColor);
+  padding: 0.8rem 1rem;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.phoneNumberBtn a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  /* justify-content: space-between; */
+}
+
+.phoneNumberBtn svg {
+  font-size: 1.5rem;
+}
+
+.contectUsContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contectUsContent .verticalLine {
+  padding: 0 0.2rem;
+  width: 5%;
+}
+
+.verticalLine .line {
+  width: 100%;
+}
+
+.contentInPera p {
+  margin: 0;
+  font-size: 0.9rem;
+  text-align: center;
+}
+/* 
+.formContent {
+} */
+
+.dropdown-contents {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dropdown .btn {
+  border: none;
+  background: var(--stepSectionBgColor);
+  color: var(--peragraphTextColor);
+}
+
+.search-form_row {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.location-blocks {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-group {
+  padding: 0.8rem;
+  border: 0.5px solid rgba(128, 128, 128, 0.269);
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+  border-radius: 5px;
+}
+
+.form-group input {
+  border: none;
+  outline: none;
+}
+
+.search-from-period {
+  display: flex;
+  justify-content: space-between;
+}
+
+.personal-details-field {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.nameAndEmail {
+  display: flex;
+  justify-content: space-between;
+  /* width: 100%; */
+}
+
+.nameAndEmail .input-field {
+  width: 48%;
+}
+
+.nameAndEmail input {
+  padding: 0.8rem;
+  border: 0.5px solid rgba(128, 128, 128, 0.269);
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.number-field {
+  width: 100%;
+  border: 1px solid rgba(128, 128, 128, 0.409);
+  border-radius: 5px;
+}
+
+.number-input-field {
+  display: flex;
+  padding: 0.8rem;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.number-input-field .verticalLine {
+  padding: 0px 10px;
+}
+
+.input-group input,
+select {
+  border: none;
+  outline: none;
+}
+
+.input-group select {
+  width: 100%;
+}
+
+.input-select-field {
+  width: 20%;
+}
+
+.input-number-field {
+  width: 70%;
+}
+
+.input-group input {
+  width: 70%;
+}
+
+.number-field input {
+  width: 100%;
+}
+
+.getFreeQuoteBtn {
+  width: 100%;
+}
+
+.getFreeQuoteBtn button {
+  padding: 0.8rem;
+  width: 100%;
+  background: var(--btnColor);
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  color: var(--whiteColor);
+}
+
+.termsAndCondition p {
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.termsAndCondition p a {
+  text-decoration: underline;
+  color: var(--textColor);
+}
+
+@media (max-width: 1400px) {
+  .callUsNowContent h3 {
+    font-size: 1.3rem;
+  }
+
+  .callUsNowContent h4 {
+    font-size: 0.8rem;
+  }
+
+  .callUsNow .phoneNumberBtn {
+    font-size: 1rem;
+    padding: 0.6rem 0.8rem;
+  }
+
+  .contentInPera p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .right-container-content {
+    width: 100%;
+  }
+
+  .contactUsHeading {
+    display: block;
+    text-align: center;
+  }
+
+  .upper-content {
+    display: none;
+  }
+
+  .dropdown-content {
+    display: none;
+  }
+
+  .search-form {
+    display: none;
+  }
+
+  .nameAndEmail .name-field {
+    display: none;
+  }
+
+  .nameAndEmail .email-field {
+    width: 100%;
+  }
+
+  .input-select-field {
+    width: 10%;
+  }
+
+  .input-number-field {
+    width: 100%;
+  }
+
+  .number-input-field .verticalLine {
+    display: block;
+  }
+}
+
+@media(max-width:1000px) {
+  .input-select-field {
+    width: 20%;
+  }
+}
+
+@media(max-width:700px) {
+  .input-select-field {
+    width: 25%;
+  }
+}
+
+@media(max-width:500px) {
+  .input-select-field {
+    width: 30%;
+  }
+}

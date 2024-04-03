@@ -1,0 +1,335 @@
+.mainFormSection {
+  width: 100%;
+  /* height: 83%; */
+  /* position: absolute; */
+  top: 20%;
+  left: 0;
+}
+
+.mainForm-container {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem auto;
+  width: 90%;
+}
+
+.left-container {
+  width: 60%;
+  border-radius: 10px;
+}
+
+.left-container-content {
+  width: 100%;
+  /* height: 85%; */
+  background: #fff;
+  border-radius: 10px;
+}
+
+.right-container-content {
+  width: 37%;
+  /* height: 100%; */
+  background: var(--whiteColor);
+  border-radius: 10px;
+}
+
+.top-content {
+  padding: 2rem 3rem;
+}
+
+.top-content .priceExpiry {
+  width: max-content;
+  background: #be7816e4;
+  color: #fff;
+
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+}
+
+.priceExpiry p {
+  margin: 0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.priceExpiry p .icon {
+  font-size: 1.3rem;
+}
+
+.cityname-heading {
+  margin: 1rem 0;
+  line-height: 22px;
+}
+
+.cityname-heading img {
+  /* width: 5%; */
+}
+
+.exclusiveOfferORPriceSection {
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+.exclusiveOffer {
+  width: 40%;
+}
+
+.exclusiveOfferContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.onlineOffer {
+  width: max-content;
+  background: #e8fcfb;
+  color: #0da3a1;
+  padding: 0.3rem 0.8rem;
+  border-radius: 10px;
+}
+
+.onlineOffer p {
+  margin: 0;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.exclusiveOffer .onlineOffer img {
+  width: 10%;
+}
+
+.callOnlyDeal p {
+  font-size: 0.99rem;
+}
+
+.verticalLine {
+  padding: 10px 30px;
+}
+
+.verticalLine .line {
+  border: 0.2px solid rgba(128, 128, 128, 0.47);
+  height: 100%;
+  /* padding: ; */
+}
+
+.onlinePrice {
+  width: 40%;
+}
+
+.onlinePriceContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.oldPrice {
+  width: max-content;
+}
+
+.oldPrice p {
+  margin: 0;
+}
+
+.oldPrice span {
+  text-decoration: line-through;
+}
+
+.newPrice {
+  display: flex;
+  /* align-items: center; */
+  gap: 5px;
+}
+
+.newPrice .star {
+  font-size: 1.5rem;
+}
+
+.newPrice .economyClass {
+  width: 50%;
+}
+
+.economyClass p {
+  font-size: 0.95rem;
+}
+
+.mid-content {
+  width: 100%;
+  background: var(--stepSectionBgColor);
+}
+
+.upper-line .line {
+  border: 0.5px solid rgba(128, 128, 128, 0.342);
+  width: 100%;
+}
+
+.middle-contents {
+  padding: 2rem 3rem;
+}
+
+.middle-contents .grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  row-gap: 1.3rem;
+}
+
+.grid .grid-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.grid-content img {
+  width: 100%;
+}
+
+.grid-content .grid-contents {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.grid-contents .heading {
+  font-weight: 500;
+  color: var(--headingTextColor);
+  margin: 0;
+}
+
+.grid-contents .peragraph {
+  color: var(--peragraphTextColor);
+}
+
+.grid-contents p {
+  margin: 0;
+}
+
+.lower-line .line {
+  border: 0.5px solid rgba(128, 128, 128, 0.342);
+  width: 100%;
+}
+
+.end-content {
+  width: 100%;
+  padding: 1rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.end-content img {
+  width: 100%;
+}
+
+.end-content p {
+  margin: 0;
+  color: #0da3a1;
+  font-weight: 500;
+}
+
+.rated-stars {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.rated-stars img {
+  width: 12%;
+  margin: 0 0.4rem;
+}
+
+@media (max-width: 1200px) {
+  .mainFormSection {
+    top: 12%;
+    height: 100%;
+  }
+
+  .mainForm-container {
+    flex-direction: column;
+    gap: 20px;
+    justify-content: unset;
+  }
+
+  .left-container {
+    width: 100%;
+  }
+
+  .top-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .cityname-heading {
+    margin: 0;
+  }
+
+  .exclusiveOfferORPriceSection {
+    flex-direction: column-reverse;
+  }
+
+  .exclusiveOffer {
+    width: 100%;
+  }
+
+  .exclusiveOfferContainer {
+    align-items: center;
+  }
+
+  .callOnlyDeal {
+    text-align: center;
+    width: 80%;
+  }
+
+  .onlinePrice {
+    width: 100%;
+  }
+
+  .onlinePriceContainer {
+    align-items: center;
+  }
+
+  .newPrice {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .newPrice .star {
+    display: none;
+  }
+
+  .newPrice .economyClass {
+    width: 100%;
+  }
+
+  .verticalLine {
+    display: none;
+  }
+
+  .mid-content {
+    display: none;
+  }
+
+  .end-content {
+    display: none;
+  }
+
+  .rated-stars {
+    display: none;
+  }
+
+  .callOnlyDeal p {
+    margin: 0;
+  }
+}
+
+@media(max-width:500px) {
+  .cityname-heading h1 {
+    font-size: 1.4rem;
+  }
+}

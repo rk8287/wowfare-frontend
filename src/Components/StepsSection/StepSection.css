@@ -1,0 +1,48 @@
+.stepSection-container {
+  padding: 2rem 1rem;
+}
+
+.step-container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+
+.step-content {
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
+.step-content .step-num {
+  color: var(--btnColor);
+  /* font-weight: 600; */
+}
+
+.step-content .step-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: 5px;
+}
+
+.step-content .step-peragraph {
+  font-size: 0.9rem;
+  margin-top: 5px;
+  color: var(--peragraphTextColor);
+}
+
+.step-arrow {
+  flex-grow: 0;
+  /* flex-basis: 0; */
+}
+
+@media(max-width:900px) {
+    .step-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .step-arrow {
+        display: none;
+    }
+}
