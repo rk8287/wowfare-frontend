@@ -8,10 +8,14 @@ import { AiOutlineInstagram } from "react-icons/ai";
 import { FaCalendarAlt } from "react-icons/fa";
 import { BsListTask } from "react-icons/bs";
 import { TbApps } from "react-icons/tb";
+import ContactPopup from "../../Components/Popup/ContactPopup";
+import Search from "../../Pages/Search/Search";
 
 const Main = () => {
   return (
     <section className="homeSection">
+
+      <ContactPopup/>
       <div className="overlay"></div>
 
       {/* <video src={video} muted loop autoPlay typeof="video/mp4"></video> */}
@@ -23,40 +27,12 @@ const Main = () => {
           </h2>
 
           <span data-aos="fade-up" className="smallText">
-            Search and Compare our best deals with over 440+ airlines - Book
-            now!
+            Search and Compare our best deals with over 440+ airlines - <span className="color-span">Book
+            now!</span>
           </span>
         </div>
-
-        <div data-aos="fade-up" className="cardDiv grid">
-          <div className="column-input">
-            <div className="input-field departure-input">
-              <HiLocationMarker className="icon" />
-              <input type="text" name="" id="" placeholder="Leaving From" />
-            </div>
-            <div className="input-field destination-input">
-              <HiOutlineUserGroup className="icon" />
-              <input type="text" name="" id="" placeholder="Going to" />
-            </div>
-            <div className="input-field departure-date-input">
-              <FaCalendarAlt className="icon" />
-              <input type="date" name="" id="" placeholder="Departing" />
-            </div>
-            <div className="input-field returning-date-input">
-              <FaCalendarAlt className="icon" />
-              <input type="date" name="" id="" placeholder="Returning" />
-            </div>
-          </div>
-
-          <div className="column-search">
-            <div className="input-field returning-date-input">
-              {/* <FaCalendarAlt className="icon" /> */}
-              <input type="text" name="" id="" placeholder="Returning" />
-            </div>
-            <div className="searchBtn">
-              <button type="submit">Search</button>
-            </div>
-          </div>
+        <div className="search-box-container">
+          <Search />
         </div>
       </div>
     </section>

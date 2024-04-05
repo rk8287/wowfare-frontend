@@ -155,6 +155,10 @@
   
   
 }
+.custom-width-input:focus {
+  
+  border: none;
+}
 
 .mytrip-btn-link{
   border: none;
@@ -211,6 +215,14 @@
   list-style: circle;
   text-decoration: none;
 
+}
+
+.forget-password{
+  font-size: 0.7rem;
+  color: #25acaa;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.4rem;
 }
 
 @media screen and (max-width: 660px) {

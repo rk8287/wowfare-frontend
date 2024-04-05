@@ -87,11 +87,11 @@ const Mytrip = () => {
                                     </div>
                                     <TextInput id="password" type="password" placeholder="Password" required />
                                 </div>
-                                <div className="flex justify-between">
+                                <div className="">
 
-                                    <a href="#" className="text-sm text-cyan-700 hover:underline dark:text-cyan-500">
+                                    <Link className="forget-password">
                                         Forget Password?
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="w-full">
                                     <Button className='my-trip-model-btn'>Continue</Button>
