@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { HiLocationMarker, HiOutlineUserGroup } from "react-icons/hi";
 import { FaCalendarAlt, FaUser } from "react-icons/fa";
+import './Search.css'
 
 const Search = () => {
   const [isOneWay, setIsOneWay] = useState(true);
@@ -9,8 +10,8 @@ const Search = () => {
   const [numInfants, setNumInfants] = useState(0);
   const [showPassengerOption, setShowPassengerOption] = useState(false);
 
-  const handleToggleFlightType = () => {
-    setIsOneWay(!isOneWay);
+  const handleToggleFlightType = (value) => {
+    setIsOneWay(value === "one-way");
   };
 
   const handleToggleShowPassenger = () => {
@@ -41,8 +42,17 @@ const Search = () => {
     <>
       <div className="way-of-flight">
         <div className="round-trip">
-          <button onClick={handleToggleFlightType}>
-            {isOneWay ? "Round trip" : "One way"}
+          <button
+            className={!isOneWay ? "active" : ""}
+            onClick={() => handleToggleFlightType("round-trip")}
+          >
+            Round trip
+          </button>
+          <button
+            className={isOneWay ? "active" : ""}
+            onClick={() => handleToggleFlightType("one-way")}
+          >
+            One way
           </button>
         </div>
       </div>

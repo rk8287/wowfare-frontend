@@ -14,7 +14,7 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  background-color: #022d5c;
+  background-image: url(../../Assets/Images/pexels-quang-nguyen-vinh-2131623.jpg);
   opacity: 0.9;
   top: 0;
   bottom: 0;
@@ -259,6 +259,19 @@ input {
   .column-search {
     width: 100%;
     grid-template-columns: repeat(1, 2fr);
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+  .overlay {
+    background-image:  url(../../Assets/Images/pexels-quang-nguyen-vinh-2131623.jpg);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .overlay {
+    background-image: url(../../Assets/Images/wave-7726187_1280.jpg);
   }
 }
 
