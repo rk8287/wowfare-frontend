@@ -1,11 +1,10 @@
 import React from "react";
 import "./SearchedFligh.css";
 import MainForm from "../../Components/MainFormSection/MainForm";
-// import mainImage from "../../Assets/Images/deeplink-bg.jpg";
+
 import Header from "../../Components/Header/Header";
 import RecentDeals from "../../Components/RecentCheapDeals/RecentDeals";
 import StepSection from "../../Components/StepsSection/StepSection";
-import StarSection from "../../Components/StarsSection/StarSection";
 import ReviewSection from "../../Components/ReviewsSection/ReviewSection";
 import Popup from "../../Components/Popup/Popup";
 

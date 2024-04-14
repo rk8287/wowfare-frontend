@@ -5,8 +5,14 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import { PiDotsNineBold } from "react-icons/pi";
 import { BiSolidPhoneCall } from "react-icons/bi";
 import { Link } from "react-router-dom";
+import UserOptions from "../../Components/Header/userOptions";
+import { useSelector } from "react-redux";
+import Loader from "../../Pages/Loader";
 
 const Header = () => {
+
+  const { isAuthenticated, user,loading } = useSelector((state) => state.user);
+
   const [active, setActive] = useState("navBar");
 
   const showNavbar = () => {
@@ -18,45 +24,53 @@ const Header = () => {
   };
 
   return (
-    <section className="navBarSection">
-      <header className="home-header flex">
-        <div className="logoDiv">
-          <Link to={""} href="#" className="logo flex">
-            <div className="nav-logo">
-              <img src={img1} alt="logo" />
-            </div>
-          </Link>
-        </div>
+   <>
+   {loading ? <Loader/> : (
+     <section className="navBarSection">
+     <header className="home-header flex">
+       <div className="logoDiv">
+         <Link to={""} href="#" className="logo flex">
+           <div className="nav-logo">
+             <img src={img1} alt="logo" />
+           </div>
+         </Link>
+       </div>
 
-        <div className={active}>
-          <ul className="navLists flex">
-            <li className="navItem">
-              <Link to={'/myTrip'} href="#" className="navLink">
-                My Trips
-              </Link>
-            </li>
+       <div className={active}>
+         <ul className="navLists flex">
+           <li className="navItem">
+             <Link to={'/myTrip'} href="#" className="navLink">
+               My Trips
+             </Link>
+           </li>
 
-            <li className="navItem">
-              <Link to={""} href="#" className="navLink">
-                Contact
-              </Link>
-            </li>
+           <li className="navItem">
+             <Link to={""} href="#" className="navLink">
+               Contact
+             </Link>
+           </li>
 
-            <button type="submit" className="home-callbtn callBtn">
-              <BiSolidPhoneCall className="icon" /> <span>(8330 436-0717)</span>
-            </button>
-          </ul>
+           <button type="submit" className="home-callbtn callBtn">
+             <BiSolidPhoneCall className="icon" /> <span>(8330 436-0717)</span>
+           </button>
+         </ul>
 
-          <div onClick={removeNavbar} className="closeNavbar">
-            <AiFillCloseCircle className="navbarIcon" />
-          </div>
-        </div>
+         <div onClick={removeNavbar} className="closeNavbar">
+           <AiFillCloseCircle className="navbarIcon" />
+         </div>
+       </div>
 
-        <div onClick={showNavbar} className="toggleNavbar">
-          <PiDotsNineBold className="navbarIcon" />
-        </div>
-      </header>
-    </section>
+       <div onClick={showNavbar} className="toggleNavbar">
+         <PiDotsNineBold className="navbarIcon" />
+       </div>
+
+       
+      
+ {isAuthenticated && <UserOptions  user={user} />}
+     </header>
+   </section>
+   )}
+   </>
   );
 };
 

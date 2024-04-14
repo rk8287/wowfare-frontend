@@ -1,6 +1,6 @@
 import React from 'react'
 import './OtherDetails.css'
-import { FaPlaneCircleCheck } from "react-icons/fa6";
+
 
 const travelImg = require('../../../Assets/Images/Travel_protection.png')
 const travelImg2 = require('../../../Assets/Images/Baggage_protection.png')

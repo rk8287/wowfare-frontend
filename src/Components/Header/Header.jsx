@@ -2,14 +2,15 @@ import React from "react";
 import "./Header.css";
 import img1 from "../../Assets/Images/logo.svg";
 import { BiSolidPhoneCall } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <div className="header">
       <div className="header-container mt-3">
-        <div className="nav-logo">
+        <Link to={'/'} className="nav-logo">
           <img src={img1} alt="logo" />
-        </div>
+        </Link>
         <div className="phoneNumber">
           <p>
             FREE PHONE <br /> ONLY DEALS 24/7
@@ -21,6 +22,8 @@ const Header = () => {
             <BiSolidPhoneCall className="icon" />
           </button>
         </div>
+
+        
       </div>
     </div>
   );
