@@ -49,7 +49,7 @@ const UserOptions = ({ user = {} }) => {
    
   }
   function account() {
-   
+    navigate("/account");
   }
   function cart() {
   
@@ -70,7 +70,7 @@ const UserOptions = ({ user = {} }) => {
         icon={
           <img
             className="speedDialIcon"
-            src={user.avatar?.url ? user.avatar.url : "https://static.vecteezy.com/system/resources/previews/002/002/403/original/man-with-beard-avatar-character-isolated-icon-free-vector.jpg"}
+            src={user.avatar?.url ? user.avatar.url : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"}
             alt="Profile"
           />
         }

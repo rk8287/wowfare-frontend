@@ -56,29 +56,17 @@ const Mytrip = () => {
         }
 
         if (isAuthenticated) {
-            toast.success('Login Successful!');
-            dispatch(clearMessage());
-            navigate("/myTrip");
-            setLoginEmail("");
-            setLoginPassword("");
-            setName("");
-            setEmail("");
-            setPassword("");
+           
             setOpenSignInModal(false); 
             setOpenCreateAccountModal(false); 
         }
 
-        if (isAuthenticated && email) {
-            toast.success(`Registration successful ${email}!`);
-            dispatch(clearMessage());
-            navigate("/myTrip");
-            setName("");
-            setEmail("");
-            setPassword("");
+        if (isAuthenticated) {
+           
             setOpenCreateAccountModal(false); 
             setOpenSignInModal(false); 
         }
-    }, [error, isAuthenticated, email, dispatch, navigate]);
+    }, [ isAuthenticated,dispatch, navigate,error]);
     
 
     return (

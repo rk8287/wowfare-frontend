@@ -3,7 +3,14 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+
+    scroll-behavior: smooth;
 }
+
+body {
+    cursor: url("../src/Assets/Images/cursor.png"), auto;
+  }
+
 
 :root {
   --primaryColor: #0000ee;

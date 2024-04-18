@@ -13,7 +13,7 @@ const Main = () => {
 <ContactPopup/>
 <div className="overlay"></div>
 
-{/* <video src={video} muted loop autoPlay typeof="video/mp4"></video> */}
+
 
 <div className="homeContent container">
   <div className="textDiv">

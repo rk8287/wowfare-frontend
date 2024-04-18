@@ -13,7 +13,7 @@ const SearchedFligh = () => {
     <div className="searchedFlight">
       <Popup />
       <div className="searchedFlightContainer">
-        {/* <img className="mainImage" src={mainImage} alt="" /> */}
+        
         <Header />
         <MainForm />
       </div>

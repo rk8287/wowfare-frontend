@@ -9,6 +9,10 @@ import { loadUser } from "./Action/userAction";
 import store from './store';
 import CreateProduct from "./Components/Admin/CreateProduct";
 import { useSelector } from "react-redux";
+import Success from "./Pages/My-Trip/SuccessPage/Success";
+import Profile from "./Pages/Profile/Profile";
+import UpdateProfile from "./Pages/UpdateProfile/UpdateProfile";
+import UpdatePassword from "./Pages/UpdatePassword/UpdatePassword";
 
 
 
@@ -30,7 +34,12 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/searchedFlight/:id" element={<SearchedFligh />}></Route>
         <Route path="/myTrip" element={<Mytrip />}></Route>
+        <Route path="/success" element={<Success />}></Route>
+        <Route path="/account" element={isAuthenticated ? <Profile />:<Navigate to="/" /> }></Route>
         <Route path="/admin/newProduct" element={isAuthenticated ? <CreateProduct /> : <Navigate to="/account" />}  />
+
+        <Route path="/me/update" element={isAuthenticated ? <UpdateProfile /> : <Navigate to="/" />} />
+        <Route path="/password/update" element={isAuthenticated ? <UpdatePassword /> : <Navigate to="/" />} />
       </Routes>
       <Footer />
     </BrowserRouter>

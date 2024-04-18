@@ -1,8 +1,46 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import "./RightContainer.css";
 import { BiSolidPhoneCall } from "react-icons/bi";
+import emailjs from "@emailjs/browser";
+import { toast } from 'react-toastify'; 
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const RightContainer = () => {
+  const [selectedOption, setSelectedOption] = useState("Economy"); // Default selected option
+  const [loading, setLoading] = useState(false); 
+
+  const formRef = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setLoading(true); 
+
+    emailjs
+      .sendForm(
+        "service_7hp8d5n",
+        "template_wul33kb",
+        formRef.current,
+        "dx1lIs93wIMV4Numx"
+      )
+      .then(
+        (result) => {
+          toast.success("Email sent Successfully");
+          formRef.current.reset();
+        },
+        (error) => {
+          toast.error("Error In sending Email");
+        }
+      )
+      .finally(() => {
+        setLoading(false); 
+      });
+  };
+
+  const handleDropdownItemClick = (option, e) => {
+    setSelectedOption(option);
+  };
+
   return (
     <div className="right-container-content">
       <div className="upper-content mb-3">
@@ -35,87 +73,99 @@ const RightContainer = () => {
         <h3>Or fill out the form and our agent will contact you</h3>
       </div>
 
-      <form action="">
+      <form ref={formRef} onSubmit={sendEmail} action="">
         <div className="dropdown-content">
           <div className="dropdown-contents">
-            <div class="dropdown">
+            <div className="dropdown">
               <button
-                class="btn btn-secondary dropdown-toggle"
+                className="btn btn-secondary dropdown-toggle"
                 type="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
                 Round-Trip
               </button>
-              <ul class="dropdown-menu">
+              <ul className="dropdown-menu">
                 <li>
-                  <a class="dropdown-item" href="/#">
+                  <div className="dropdown-item" href="/#">
                     Action
-                  </a>
+                  </div>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="/#">
+                  <div className="dropdown-item" href="/#">
                     Another action
-                  </a>
+                  </div>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="/#">
+                  <div className="dropdown-item" href="/#">
                     Something else here
-                  </a>
+                  </div>
                 </li>
               </ul>
             </div>
-            <div class="dropdown">
+            <div className="dropdown">
               <button
-                class="btn btn-secondary dropdown-toggle"
+                className="btn btn-secondary dropdown-toggle"
                 type="button"
                 data-bs-toggle="dropdown"
-                // aria-expanded="false"
+                
               >
                 1 Traveler
               </button>
-              <ul class="dropdown-menu">
+              <ul className="dropdown-menu">
                 <li>
-                  <a class="dropdown-item" href="/#">
+                  <div className="dropdown-item" href="/#">
                     Action
-                  </a>
+                  </div>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="/#">
+                  <div className="dropdown-item" href="/#">
                     Another action
-                  </a>
+                  </div>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="/#">
+                  <div className="dropdown-item" href="/#">
                     Something else here
-                  </a>
+                  </div>
                 </li>
               </ul>
             </div>
-            <div class="dropdown">
+            <div className="dropdown">
               <button
-                class="btn btn-secondary dropdown-toggle"
+                className="btn btn-secondary dropdown-toggle"
                 type="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Economy
+                {selectedOption || "Economy"}
               </button>
-              <ul class="dropdown-menu">
+              <ul className="dropdown-menu">
                 <li>
-                  <a class="dropdown-item" href="/#">
-                    Action
-                  </a>
+                  <div
+                    className="dropdown-item"
+                    name="Primium" 
+                    onClick={() => handleDropdownItemClick("Primium Economy")}
+                  >
+                    Primium Economy
+                  </div>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="/#">
-                    Another action
-                  </a>
+                  <div
+                    className="dropdown-item"
+                    name="Business"
+                    onClick={() => handleDropdownItemClick("Business")}
+                  >
+                    Business
+                  </div>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="/#">
-                    Something else here
-                  </a>
+                  <div
+                    className="dropdown-item"
+                    name="First"
+                    onClick={() => handleDropdownItemClick("First")}
+                  >
+                    First
+                  </div>
                 </li>
               </ul>
             </div>
@@ -127,21 +177,21 @@ const RightContainer = () => {
             <div className="location-blocks">
               <div className="form-group location-from">
                 <span>From</span>
-                <input type="text" placeholder="City or Airport" />
+                <input type="text" placeholder="City or Airport" name="From" />
               </div>
               <div className="form-group location-to">
                 <span>To</span>
-                <input type="text" placeholder="City or Airport" />
+                <input type="text" placeholder="City or Airport" name="To"/>
               </div>
             </div>
             <div className="search-from-period">
               <div className="form-group">
                 <span>Departure</span>
-                <input type="date" name="" id="" />
+                <input type="date" name="depature" id=""  />
               </div>
               <div className="form-group">
                 <span>Return</span>
-                <input type="date" name="" id="" />
+                <input type="date" name="return" id="" />
               </div>
             </div>
           </div>
@@ -150,26 +200,27 @@ const RightContainer = () => {
         <div className="personal-details-field mt-3">
           <div className="nameAndEmail">
             <div className="input-field email-field">
-              <input type="text" placeholder="Enter Your Email" />
+              <input type="text" placeholder="Enter Your Email" name="email" />
             </div>
             <div className="input-field name-field">
-              <input type="text" placeholder="Enter Your Name" />
+              <input type="text" placeholder="Enter Your Name" name="name" />
             </div>
           </div>
           <div className="number-field">
             <div className="number-input-field">
-              <div class="input-number-field input-group">
+              <div className="input-number-field input-group">
                 <input
                   type="number"
                   id="flightNumber"
                   name="flightNumber"
                   placeholder="82871-46841"
+                  
                 />
               </div>
               <div className="verticalLine">
                 <div className="line"></div>
               </div>
-              <div class="input-select-field input-group">
+              <div className="input-select-field input-group">
                 <select id="cityCode" name="cityCode">
                   <option value="NYC">
                     <div className="flag">flag</div>
@@ -185,7 +236,7 @@ const RightContainer = () => {
         </div>
 
         <div className="getFreeQuoteBtn mt-3">
-          <button type="submit">Claim Your Discount</button>
+          {loading ? <div style={{alignItems:'center',color:'green',display:'flex',justifyContent:'center',fontWeight:'bolder'}}>Loading...</div>: (<button type="submit">Get a Free Quote!</button>)}
         </div>
 
         <div className="termsAndCondition mt-3">
