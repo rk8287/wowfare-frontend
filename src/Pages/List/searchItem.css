@@ -1,0 +1,155 @@
+
+.searchItem {
+    border: 1px solid lightgray;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .siImg {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+   
+  }
+
+  .siCancelSto{
+    font-size: 14px;
+    color: red;
+  }
+
+  
+  .siDesc {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 2;
+  }
+  
+  .siTitle {
+    font-size: 20px;
+    color: #0071c2;
+  }
+  
+  .siDistance {
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+  }
+
+  .hr-tag{
+    width: 250px;
+    height: 4px;
+
+  }
+
+
+  .siSubtitle-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.3rem;
+    color: #626971;
+  }
+
+  
+  .siTaxiOp {
+    font-size: 12px;
+    background-color: #008009;
+    color: white;
+    width: max-content;
+    padding: 3px;
+    border-radius: 5px;
+  }
+  
+  .siSubtitle{
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   
+  }
+  
+  .siFeatures{
+    font-size: 12px;
+  }
+  
+  .siCancelOp{
+    font-size: 1.4rem;
+    color:#626971;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 500;
+
+  }
+  
+  .siCancelOpSubtitle{
+    font-size: 12px;
+    color: #008009;
+  }
+  
+  .siDetails {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
+  }
+  
+  .siRating{
+    display: flex;
+    justify-content: space-between
+  }
+  
+  .siRating>span{
+    font-weight: 500;
+  }
+  .siRating>button{
+   background-color: #003580;
+   color: white;
+   padding: 5px;
+   font-weight: bold;
+   border: none;
+  }
+  
+  .siDetailTexts{
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .siPrice{
+    font-size: 24px;
+  }
+
+  .flexbox{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .flexbox-two{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   
+  }
+  
+  .siTaxOp{
+    font-size: 12px;
+    color: gray;
+  }
+  
+  .siCheckButton{
+    background-color: #0071c2;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  

@@ -23,6 +23,9 @@ const Header = () => {
     setActive("navBar");
   };
 
+
+  
+
   return (
    <>
    {loading ? <Loader/> : (
