@@ -43,7 +43,7 @@ function App() {
         <Route path="/me/update" element={isAuthenticated ? <UpdateProfile /> : <Navigate to="/" />} />
         <Route path="/password/update" element={isAuthenticated ? <UpdatePassword /> : <Navigate to="/" />} />
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </BrowserRouter>
   );
 }
