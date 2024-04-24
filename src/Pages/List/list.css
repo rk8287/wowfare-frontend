@@ -67,9 +67,14 @@
   }
   
   .lsOptionInput{
-    width: 80px;
+    width: 20px;
     background-color: white;
     
+  }
+
+  .lsOptionInput-L{
+    width: 80px;
+    background-color: white;
   }
   
   .listSearch>button{
@@ -85,31 +90,36 @@
   .listResult {
     flex: 3;
   }
+  @media (max-width: 600px) {
+    .listContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-top: 20px;
+    }
   
-
-@media (max-width: 600px) {
+    .listWrapper {
+      width: 90%;
+      margin: auto;
+      max-width: 1400px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
   
-.listContainer {
-  display: flex;
-  flex-direction: column;
-
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.listWrapper {
-  width: 100%;
-  max-width: 1400px;
-  display: flex;
-  gap: 20px;
-}
-
-.listSearch {
- display: none;
-}
-
-
-.listResult {
-  flex: 3;
-}
-}
+    .listSearch {
+      position:relative;
+      order: -1; 
+      background-color: #febb02;
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+  
+    .listResult {
+      flex: 3;
+    }
+  
+    /* Adjust other styles as needed */
+  }
+  

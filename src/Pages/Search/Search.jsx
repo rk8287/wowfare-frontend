@@ -60,7 +60,7 @@ const Search = () => {
         OriginDestinationInfo: [
           {
             departureDate,
-            returnDate: returningDate || '', // Handle the case when returningDate is empty
+            returnDate: returningDate || '',
             airportOriginCode: leavingFrom,
             airportDestinationCode: goingTo,
           },
@@ -110,7 +110,7 @@ const Search = () => {
                 type="text"
                 name=""
                 id=""
-                placeholder="Leaving From"
+                placeholder="From"
                 value={leavingFrom}
                 onChange={(e) => setLeavingFrom(e.target.value)}
                 required
@@ -122,7 +122,7 @@ const Search = () => {
                 type="text"
                 name=""
                 id=""
-                placeholder="Going to"
+                placeholder="To"
                 value={goingTo}
                 onChange={(e) => setGoingTo(e.target.value)}
                 required
@@ -158,7 +158,7 @@ const Search = () => {
           <div className="column-search">
             <div onClick={handleToggleShowPassenger} className="input-field passenger-input">
               <FaUser className="icon" />
-              <input type="" name="" id="" placeholder="Passenger" required />
+              <input type="number"  value={numAdults + numChildren + numInfants} placeholder={`Passenger: ${numAdults + numChildren + numInfants}`} required />
             </div>
             <div className="searchBtn">
               <button type="submit">Search</button>

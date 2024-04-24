@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./list.css";
 import { useLocation } from "react-router-dom";
 import SearchItem from "./SearchItem";
+import Loader from "../Loader";
+import NotFound from "../Not Found/NotFound";
 
 const List = ({ loading }) => {
   const location = useLocation();
@@ -37,46 +39,27 @@ const List = ({ loading }) => {
               <label>Options</label>
               <div className="lsOptions">
                 <div className="lsOptionItem">
-                  <span className="lsOptionText">Min price</span>
+                  <span className="lsOptionText">NON-STOP</span>
                   <input
-                    type="number"
+                    type="checkbox"
                     onChange={(e) => setMin(e.target.value)}
                     className="lsOptionInput"
                   />
                 </div>
                 <div className="lsOptionItem">
-                  <span className="lsOptionText">Max price</span>
+                  <span className="lsOptionText">1-STOP</span>
                   <input
-                    type="number"
+                    type="checkbox"
                     onChange={(e) => setMax(e.target.value)}
                     className="lsOptionInput"
                   />
                 </div>
                 <div className="lsOptionItem">
-                  <span className="lsOptionText">Adult</span>
+                  <span className="lsOptionText">Airlines</span>
                   <input
                     type="number"
                     min={1}
-                    className="lsOptionInput"
-                    placeholder={adult}
-                  />
-                </div>
-                <div className="lsOptionItem">
-                  <span className="lsOptionText">Children</span>
-                  <input
-                    type="number"
-                    min={0}
-                    className="lsOptionInput"
-                    placeholder={options.children}
-                  />
-                </div>
-                <div className="lsOptionItem">
-                  <span className="lsOptionText">Class</span>
-                  <input
-                    type="number"
-                    min={1}
-                    className="lsOptionInput"
-                    placeholder={options.room}
+                    className="lsOptionInput-L"
                   />
                 </div>
               </div>
@@ -85,27 +68,27 @@ const List = ({ loading }) => {
           </div>
           <div className="listResult">
             {loading ? (
-              "loading"
+              <Loader/>
+            ) : searchResult.length === 0 ? (
+              <NotFound/>
             ) : (
-              <>
-                {searchResult.map((item) => (
-                  <SearchItem
-                    key={item.FareItinerary.ResultIndex}
-                    item={item.FareItinerary}
-                    totalFare={
-                      item.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.Amount
-                    }
-                    totalStops={
-                      item.FareItinerary.OriginDestinationOptions[0].TotalStops
-                    }
-                    validatingAirlineCode={
-                      item.FareItinerary.ValidatingAirlineCode
-                    }
-                    origin={origin}
-                    destination={destination}
-                  />
-                ))}
-              </>
+              searchResult.map((item) => (
+                <SearchItem
+                  key={item.FareItinerary.ResultIndex}
+                  item={item.FareItinerary}
+                  totalFare={
+                    item.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.Amount
+                  }
+                  totalStops={
+                    item.FareItinerary.OriginDestinationOptions[0].TotalStops
+                  }
+                  validatingAirlineCode={
+                    item.FareItinerary.ValidatingAirlineCode
+                  }
+                  origin={origin}
+                  destination={destination}
+                />
+              ))
             )}
           </div>
         </div>
