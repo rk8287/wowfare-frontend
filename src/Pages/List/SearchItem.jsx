@@ -1,7 +1,7 @@
+import React from "react";
 import { Link } from "react-router-dom";
-import "./searchItem.css";
-
 import { IoAirplaneSharp } from "react-icons/io5";
+import "./searchItem.css";
 
 const SearchItem = ({ item, totalFare, totalStops, validatingAirlineCode, origin, destination }) => {
   const lastOriginDestinationOption = item.OriginDestinationOptions[item.OriginDestinationOptions.length - 1];
@@ -10,20 +10,20 @@ const SearchItem = ({ item, totalFare, totalStops, validatingAirlineCode, origin
   const flightNumber = lastOriginDestinationOption?.OriginDestinationOption[0]?.FlightSegment.OperatingAirline.FlightNumber;
   const flightName = lastOriginDestinationOption?.OriginDestinationOption[0]?.FlightSegment.OperatingAirline.Name;
 
-    const formatTime = (time) => {
-      const date = new Date(time);
-      return date.toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit' });
-    };
-  
-    const formattedArrivalTime = formatTime(arrivalDateTime);
-    const formattedDepartureTime = formatTime(departureDateTime);
+  const formatTime = (time) => {
+    const date = new Date(time);
+    return date.toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit' });
+  };
+
+  const formattedArrivalTime = formatTime(arrivalDateTime);
+  const formattedDepartureTime = formatTime(departureDateTime);
 
   return (
     <div className="searchItem">
-      <img src={'https://bcassetcdn.com/public/blog/wp-content/uploads/2022/08/25104221/Qantas-Airline-Logo.png'} alt="" className="siImg" />
+      <img src={'https://logos-world.net/wp-content/uploads/2023/01/Singapore-Airlines-Logo.png'} alt="Loading.." className="siImg" />
       <div className="siDesc">
-        <h1 className="siTitle">{flightName}</h1>
-        <span className="siDistance">{flightNumber}</span>
+        <h1 className="siTitle">{`${flightName} (${validatingAirlineCode})`}</h1>
+        <span className="siDistance">{`Flight No : ${flightNumber}`}</span>
         <span className="siTaxiOp">24 HOURS FREE CANCELLATION</span>
         <div className="flexbox">
           <span className="siSubtitle" style={{ textTransform: "uppercase" }}>{origin}</span>
@@ -55,21 +55,3 @@ const SearchItem = ({ item, totalFare, totalStops, validatingAirlineCode, origin
 };
 
 export default SearchItem;
-
-
-
-
-
-
-// import React from "react";
-// import { IoAirplaneSharp } from "react-icons/io5";
-// import "./searchItem.css";
-// import { Link } from "react-router-dom";
-
-
-
-
-
-//   return (
-//     <div className="searchItem">
-     

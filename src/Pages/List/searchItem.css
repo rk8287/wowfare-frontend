@@ -36,7 +36,8 @@
   
   .siDistance {
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 500;
+    color: #626971;
     font-family: Arial, Helvetica, sans-serif;
     
   }
@@ -152,5 +153,108 @@
     border: none;
     cursor: pointer;
     border-radius: 5px;
+  }
+  
+  @media (max-width: 768px) {
+    .searchItem {
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .siImg {
+      width:30%;
+      margin: auto;
+      height: auto;
+    }
+  
+    .siDesc {
+      flex: none;
+      align-items: center;
+    }
+  
+    .siTitle {
+      font-size: 18px;
+      
+    }
+  
+    .siDistance {
+      font-size: 12px;
+    }
+  
+    .hr-tag{
+      width: 100%;
+    }
+  
+    .siSubtitle-icon {
+      margin-top: 1rem;
+      text-align: center;
+    }
+  
+    .siTaxiOp {
+      font-size: 10px;
+    }
+    
+    .siSubtitle {
+      font-size: 1.2rem;
+    }
+  
+    .siFeatures {
+      font-size: 10px;
+    }
+  
+    .siCancelOp {
+      font-size: 1.2rem;
+    }
+  
+    .siCancelOpSubtitle {
+      font-size: 10px;
+    }
+  
+    .siDetails {
+      flex: none;
+    }
+  
+    .siRating {
+      flex-direction: column;
+      gap: 5px;
+    }
+  
+    .siRating > button {
+      padding: 3px;
+      font-size: 10px;
+    }
+  
+    .siDetailTexts {
+      text-align: left;
+      gap: 3px;
+    }
+  
+    .siPrice {
+      font-size: 20px;
+      font-weight: 600;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      text-align: center;
+    }
+  
+    .flexbox {
+      flex-direction: column;
+      gap: 5px;
+    }
+  
+    .flexbox-two {
+      flex-direction: column;
+      gap: 5px;
+    }
+  
+    .siTaxOp {
+      font-size: 10px;
+    }
+  
+    .siCheckButton {
+      font-size: 14px;
+      padding: 8px;
+    }
   }
   

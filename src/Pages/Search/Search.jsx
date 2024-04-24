@@ -17,16 +17,13 @@ const Search = () => {
   const [goingTo, setGoingTo] = useState('');
   const [departureDate, setDepartureDate] = useState('');
   const [returningDate, setReturningDate] = useState('');
-  const [searchResult, setSearchResults] = useState([]);
-  const [flightClass, setFlightClass] = useState('Economy')
+  const [flightClass, setFlightClass] = useState('Economy');
 
   const navigate = useNavigate();
 
   const handleToggleFlightType = (value) => {
     setIsOneWay(value === 'one-way');
   };
-
-  
 
   const handleToggleShowPassenger = () => {
     setShowPassengerOption(!showPassengerOption);
@@ -35,13 +32,13 @@ const Search = () => {
   const handlePassengerChange = (type, increment) => {
     switch (type) {
       case 'adults':
-        setNumAdults(Math.max(numAdults + increment, 0));
+        setNumAdults((prevNum) => Math.max(prevNum + increment, 0));
         break;
       case 'children':
-        setNumChildren(Math.max(numChildren + increment, 0));
+        setNumChildren((prevNum) => Math.max(prevNum + increment, 0));
         break;
       case 'infants':
-        setNumInfants(Math.max(numInfants + increment, 0));
+        setNumInfants((prevNum) => Math.max(prevNum + increment, 0));
         break;
       default:
         break;
@@ -50,10 +47,7 @@ const Search = () => {
 
   const handleSearch = async (e) => {
     e.preventDefault();
-    setLoading(true); 
-    // navigate('/flights', {
-    //   state: { leavingFrom, departureDate, goingTo, options: { numAdults, numChildren, numInfants } },
-    // });
+    setLoading(true);
 
     try {
       const response = await axios.post('/api/proxy/availability', {
@@ -65,8 +59,8 @@ const Search = () => {
         journeyType: isOneWay ? 'OneWay' : 'Return',
         OriginDestinationInfo: [
           {
-            departureDate: departureDate,
-             returnDate:returningDate,
+            departureDate,
+            returnDate: returningDate || '', // Handle the case when returningDate is empty
             airportOriginCode: leavingFrom,
             airportDestinationCode: goingTo,
           },
@@ -76,23 +70,17 @@ const Search = () => {
         childs: numChildren,
         infants: numInfants,
       });
-     
 
-      
-      if(response.data){
-        
+      if (response.data) {
         const fareItineraries = response.data.AirSearchResponse?.AirSearchResult?.FareItineraries || [];
-      console.log(response.data)
-      console.log("fare" ,+ fareItineraries)
         navigate('/flights', {
-          state: { searchResult:fareItineraries, leavingFrom, departureDate, goingTo, options: { numAdults, numChildren, numInfants } },
+          state: { searchResult: fareItineraries, leavingFrom, departureDate, goingTo, options: { numAdults, numChildren, numInfants } },
         });
       }
     } catch (error) {
       console.error('Error fetching data:', error);
-    
     } finally {
-      setLoading(false); 
+      setLoading(false);
     }
   };
 
@@ -102,7 +90,7 @@ const Search = () => {
 
   return (
     <>
-    <div className="way-of-flight">
+      <div className="way-of-flight">
         <div className="round-trip">
           <button className={!isOneWay ? 'active' : ''} onClick={() => handleToggleFlightType('Return')}>
             Return
@@ -125,6 +113,7 @@ const Search = () => {
                 placeholder="Leaving From"
                 value={leavingFrom}
                 onChange={(e) => setLeavingFrom(e.target.value)}
+                required
               />
             </div>
             <div className="input-field destination-input">
@@ -136,6 +125,7 @@ const Search = () => {
                 placeholder="Going to"
                 value={goingTo}
                 onChange={(e) => setGoingTo(e.target.value)}
+                required
               />
             </div>
             <div className="input-field departure-date-input">
@@ -146,6 +136,7 @@ const Search = () => {
                 id=""
                 placeholder="Departing"
                 value={departureDate}
+                required
                 onChange={(e) => setDepartureDate(e.target.value)}
               />
             </div>
@@ -165,9 +156,9 @@ const Search = () => {
           </div>
 
           <div className="column-search">
-            <div className="input-field passenger-input">
+            <div onClick={handleToggleShowPassenger} className="input-field passenger-input">
               <FaUser className="icon" />
-              <input type="text" name="" id="" placeholder="Passenger" />
+              <input type="" name="" id="" placeholder="Passenger" required />
             </div>
             <div className="searchBtn">
               <button type="submit">Search</button>
@@ -175,29 +166,18 @@ const Search = () => {
           </div>
         </div>
         <div className="fligh-class-dropdown">
-  <select
-  
-    className="dropdown-flight-class"
-    aria-label="Default select example"
-    value={flightClass} 
-    onChange={(e) => setFlightClass(e.target.value)} 
-  >
-    <option value="Economy">Economy</option>
-    <option value="PremiumEconomy">Premium Economy</option>
-    <option value="Business">Business</option>
-    <option value="First">First</option>
-  </select>
-</div>
-
-
-        {/* <div className="fligh-class-dropdown">
-          <select className="dropdown-flight-class" aria-label="Default select example">
-            <option selected>Economy</option>
-            <option value="1">Premium Economy</option>
-            <option value="2">Business</option>
-            <option value="3">First</option>
+          <select
+            className="dropdown-flight-class"
+            aria-label="Default select example"
+            value={flightClass}
+            onChange={(e) => setFlightClass(e.target.value)}
+          >
+            <option value="Economy">Economy</option>
+            <option value="PremiumEconomy">Premium Economy</option>
+            <option value="Business">Business</option>
+            <option value="First">First</option>
           </select>
-        </div> */}
+        </div>
 
         {showPassengerOption && (
           <div className="passenger-options">
@@ -270,7 +250,11 @@ const Search = () => {
           </div>
         )}
       </form>
-      {loading && <div><Loader style ={{width:"100vw", height:"100vh"}} /></div>}
+      {loading && (
+        <div style={{ position: "fixed", top: 0, left: 0, width: "100%", height: "100%", zIndex: 9999 }}>
+          <Loader />
+        </div>
+      )}
     </>
   );
 };

@@ -86,3 +86,30 @@
     flex: 3;
   }
   
+
+@media (max-width: 600px) {
+  
+.listContainer {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.listWrapper {
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  gap: 20px;
+}
+
+.listSearch {
+ display: none;
+}
+
+
+.listResult {
+  flex: 3;
+}
+}
