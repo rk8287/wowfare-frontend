@@ -1,0 +1,156 @@
+/* Desktop styles */
+.flight-details-main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 50vh;
+  }
+  
+  .dropdown {
+    display: flex;
+  }
+  
+  .button-container {
+    display: flex;
+    position: absolute;
+    top: 40%;
+    right: 100%;
+  }
+  
+  .flex-button {
+    display: flex;
+    margin: 5px 20px;
+    font-size: 0.9rem;
+    color: #0071c2;
+    padding: 8px 20px;
+    border: 1px solid #e4e5ea;
+  }
+  
+  .details-container {
+    width: 35vw;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 60%;
+    right: 100%;
+    height: 20vh;
+    
+   
+  }
+
+  .section-flight-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+   
+   
+  }
+
+  .section-flight-container{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 0.6rem 1rem;
+    background-color: #d1efc2;
+  }
+
+  .p-tag{
+    font-weight: 400;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  
+  }
+
+  .depart{
+    
+    padding: 0 3rem;
+    font-weight: 600;
+  }
+
+ 
+
+  .depart{
+    display: flex;
+  }
+
+
+  .section-flight-container-two{
+    display: flex;
+    margin:1rem;
+  }
+  .flight-no{
+    padding: 0 1rem;
+  }
+
+
+  /*fare details section*/
+
+
+  .fare-details-section{
+
+    height: 20vh;
+    width: 100vw;
+    border: 1px solid #e4e5ea;
+   
+  }
+
+
+  .fare-2-details-container{
+    width: 40vw;
+    height: 100%;
+    display:flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    align-items: center;
+    margin:0 1rem;
+    
+   
+  }
+
+  .other-fare-detials >p{
+   margin: 1rem 0;
+   font-weight: 600;
+   font-family: 'Times New Roman', Times, serif;
+   
+  }
+
+  .fare-p-tag{
+    
+    display: flex;
+    justify-content: flex-start;
+   
+    
+  }
+
+  
+  /* Mobile styles */
+  @media only screen and (max-width: 768px) {
+    .button-container {
+      top: auto;
+      right: auto;
+      align-items: center;
+      margin-top: 20px;
+    }
+  
+    .details-container {
+      display: flex;
+      justify-content: center; 
+      width: 100%; 
+      padding: 1rem;
+      top: 50%; 
+      right: 5%;
+      transform: translateY(-50%); 
+      position: relative; 
+      height: auto; 
+      border: 1px solid black;
+    }
+  
+    .flex-button {
+      display: flex;
+      margin: 6px;
+      padding: 3px 14px;
+      border: 1px solid gray;
+    }
+  }
+  

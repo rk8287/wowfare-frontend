@@ -123,6 +123,8 @@
   
   .siPrice{
     font-size: 24px;
+    color: #008009;
+    font-weight: 600;
   }
 
   .flexbox{
@@ -145,6 +147,8 @@
   
   .siCheckButton{
     background-color: #0071c2;
+    width: 50%;
+    margin-left: 8rem;
     color: white;
     font-weight: 600;
     text-transform: uppercase;
@@ -255,6 +259,10 @@
     .siCheckButton {
       font-size: 14px;
       padding: 8px;
+     margin-left: 0;
+     width: 100%;
+     margin-top: 0.6rem;
+     
     }
   }
   

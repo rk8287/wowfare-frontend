@@ -73,6 +73,7 @@ const Search = () => {
 
       if (response.data) {
         const fareItineraries = response.data.AirSearchResponse?.AirSearchResult?.FareItineraries || [];
+        console.log(response.data)
         navigate('/flights', {
           state: { searchResult: fareItineraries, leavingFrom, departureDate, goingTo, options: { numAdults, numChildren, numInfants } },
         });

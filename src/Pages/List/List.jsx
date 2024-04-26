@@ -54,6 +54,16 @@ const List = ({ loading }) => {
                     className="lsOptionInput"
                   />
                 </div>
+
+                <div className="lsOptionItem">
+                  <span className="lsOptionText">2 + STOP</span>
+                  <input
+                    type="checkbox"
+                    onChange={(e) => setMax(e.target.value)}
+                    className="lsOptionInput"
+                  />
+                </div>
+
                 <div className="lsOptionItem">
                   <span className="lsOptionText">Airlines</span>
                   <input
